@@ -2965,6 +2965,36 @@
                 "type": "kvrpcpb.ExecDetailsV2"
               }
             ]
+          },
+          {
+            "name": "CancelRequest",
+            "fields": [
+              {
+                "id": 1,
+                "name": "start_ts",
+                "type": "uint64"
+              },
+              {
+                "id": 2,
+                "name": "task_id",
+                "type": "uint64"
+              },
+              {
+                "id": 3,
+                "name": "error",
+                "type": "errorpb.Error"
+              }
+            ]
+          },
+          {
+            "name": "CancelResponse",
+            "fields": [
+              {
+                "id": 1,
+                "name": "error",
+                "type": "errorpb.Error"
+              }
+            ]
           }
         ],
         "imports": [
@@ -19618,6 +19648,11 @@
                     "type": "kvrpcpb.PrepareFlashbackToVersionRequest"
                   },
                   {
+                    "id": 37,
+                    "name": "CancelCoprocessor",
+                    "type": "coprocessor.CancelRequest"
+                  },
+                  {
                     "id": 255,
                     "name": "Empty",
                     "type": "BatchCommandsEmptyRequest"
@@ -19808,6 +19843,11 @@
                     "id": 36,
                     "name": "PrepareFlashbackToVersion",
                     "type": "kvrpcpb.PrepareFlashbackToVersionResponse"
+                  },
+                  {
+                    "id": 37,
+                    "name": "CancelCoprocessor",
+                    "type": "coprocessor.CancelResponse"
                   },
                   {
                     "id": 255,
@@ -20063,6 +20103,11 @@
                 "in_type": "coprocessor.BatchRequest",
                 "out_type": "coprocessor.BatchResponse",
                 "out_streamed": true
+              },
+              {
+                "name": "CancelCoprocessor",
+                "in_type": "coprocessor.CancelRequest",
+                "out_type": "coprocessor.CancelResponse"
               },
               {
                 "name": "RawCoprocessor",

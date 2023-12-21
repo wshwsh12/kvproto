@@ -120,3 +120,13 @@ message StoreBatchTaskResponse {
     uint64 task_id = 5;
     kvrpcpb.ExecDetailsV2 exec_details_v2 = 6;
 }
+
+message CancelRequest {
+    uint64 start_ts = 1;
+    uint64 task_id = 2;
+    errorpb.Error error = 3;
+}
+
+message CancelResponse {
+    errorpb.Error error = 1;
+}
